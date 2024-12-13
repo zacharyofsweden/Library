@@ -64,16 +64,16 @@ body {
     background-color: antiquewhite;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 1fr 6fr ;
+    grid-template-rows: 1fr 1fr 6fr;
 
 }
 
 .contentHeader {
-    height: 30%;
-    width: 100%;
-    background-color: aqua;
+    background-color: rgb(23, 199, 199);
+    grid-column: 1/2;
+    grid-row: 2/2;
+    overflow: hidden;
 }
-
 .addButton {
     height: 2rem;
     width: 5rem;
@@ -87,7 +87,9 @@ body {
 }
 
 .contentShelf {
-    height: 10%;
-    width: 10%;
-    background-color: aqua;
+
+    background-color: rgb(255, 238, 0);
+    grid-column: 1/2;
+    grid-row: 2/4;
+    overflow: hidden;
 }
