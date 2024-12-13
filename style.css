@@ -1,0 +1,46 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+body {
+    background-color: antiquewhite;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    width: auto;
+    height: 56rem;
+}
+
+.container {
+    align-self: center;
+    width: 80%;
+    height: 90%;
+    background-color: white;
+    border-radius: 1rem;
+    box-shadow: 10px 10px 0.2rem rgb(221, 209, 204);
+    display: grid;
+    grid-template-columns: 1fr 7fr;
+    grid-template-rows: 1fr;
+}
+
+.sideBar {
+    background-color: white;
+    border-radius: 5% 0% 0% 5%;
+}
+
+.contentContainer {
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 0% 1% 1% 0%;
+}
+
+.content {
+    width: 97%;
+    height: 97%;
+    border-radius: 2rem;
+    background-color: antiquewhite;
+}
