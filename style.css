@@ -28,8 +28,27 @@ body {
 .sideBar {
     background-color: white;
     border-radius: 5% 0% 0% 5%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+.sideBarLogo {
+    height: 1rem;
+    width: 1rem;
+    background-color: aqua;
 }
 
+.sideBarNav {
+    height: 10%;
+    width: 10%;
+    background-color: aqua;
+}
+
+.sideBarProfile {
+    height: 10%;
+    width: 10%;
+    background-color: aqua;
+}
 .contentContainer {
     background-color: white;
     display: flex;
@@ -43,4 +62,32 @@ body {
     height: 97%;
     border-radius: 2rem;
     background-color: antiquewhite;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 6fr ;
+
+}
+
+.contentHeader {
+    height: 30%;
+    width: 100%;
+    background-color: aqua;
+}
+
+.addButton {
+    height: 2rem;
+    width: 5rem;
+    background-color: rgb(36, 185, 185);
+}
+
+.searchBar {
+    height: 90%;
+    width: 10%;
+    background-color: rgb(197, 240, 240);
+}
+
+.contentShelf {
+    height: 10%;
+    width: 10%;
+    background-color: aqua;
 }
