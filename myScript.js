@@ -1,7 +1,7 @@
-const myLibrary = [];
+let bookCount = 0;
+let bookDisplayCount = 0;
 
-//Todo Make sure that my form gets subbmited to right place in code 
-//Todo Make sure that i can transfer the dom to the book class like author = new Book ("sss" SSS)
+const myLibrary = [];
 
 function Book(title, author, pageCount) {
     //The Construktor
@@ -11,36 +11,17 @@ function Book(title, author, pageCount) {
 }
 
 
-function addBookToLibrary(book) {
-    myLibrary.push(book);
-}
-
-const theHobbit = new Book("Hobbit", "JR Tolken", "222");
-
-addBookToLibrary(theHobbit)
-//TODO Change it to use a modol dialog instead much easier. 
 function bookForm() {
-    const formArray = []
+
     //Basic form container
     const modal = document.querySelector(".modalForm")
     const openModal = document.querySelector(".addButton")
     const closeModal = document.querySelector(".modalClose")
-    const authorInput = document.querySelector(".modalClose")
-    const titleInput = document.querySelector(".modalClose")
-    const pageCountInput = document.querySelector(".modalClose")
+    const submitModal = document.querySelector(".submitButton")
+    const authorInput = document.querySelector(".formAuthor")
+    const titleInput = document.querySelector(".formTitle")
+    const pageCountInput = document.querySelector(".formPageCount")
 
-
-    //Submit logic 
-    //when i submit gather all of their input and add that in a function 
-    //Todo use an array and add all of these in the array
-    //then use array method like reduce to add them all in to a new book
-    //and then add it to library 
-    function handelSubmit() {
-        console.log("working")
-        formArray.push(authorInput.value)
-        formArray.push(titleInput.value)
-        formArray.push(pageCountInput.value)
-    }
 
     //Inputs
     openModal.addEventListener("click", () => {
@@ -51,25 +32,78 @@ function bookForm() {
         modal.close();
     })
 
-    closeModal.addEventListener(".submitButton", () => {
-        preventDefault();
-        console.log("working")
+    submitModal.addEventListener("click", (e) => {
+        e.preventDefault();
+        handelSubmit()
     })
 
 
+    //Submit logic 
+    //when i submit gather all of their input and add that in a function 
+    //add it to library 
+    function handelSubmit() {
+        const testBook = new Book(titleInput.value, authorInput.value, pageCountInput.value)
+        console.log(testBook)
+        addBookToLibrary(testBook)
+        modal.close();
+    }
 
+
+}
+
+
+const theHobbit = new Book("Hobbit", "JR Tolken", "222");
+
+addBookToLibrary(theHobbit)
+
+
+function addBookToLibrary(book) {
+    myLibrary.push(book);
+    bookCount++;
+    displayBookShelf(myLibrary[myLibrary.length - 1])
 }
 
 
 
 
-
-
-myLibrary.forEach(displayBookShelf)
 
 function displayBookShelf(book) {
-    console.log(book)
+    console.log(myLibrary.length)
+   
+   
+        //Increase bookDisplay count to keep track on all the books we track
+      
+        console.log(book)
+        //Gets container to contain the books 
+        const shelf = document.querySelector(".ShelfContainer")
+    
+        //Create a new book div
+        const newBook = document.createElement("div")
+        newBook.classList.add("bookTest");
+    
+    
+        //Create new paragraph for all the info
+        const titleInfo = document.createElement("p")
+        titleInfo.classList.add("titleStyle")
+        const authorInfo = document.createElement("p")
+        authorInfo.classList.add("authorStyle")
+        const pageCountInfo = document.createElement("p")
+        pageCountInfo.classList.add("pagesCountStyle")
 
+        //displays the book attributes  
+        titleInfo.innerHTML = (book.title)
+        authorInfo.innerHTML = (book.author)
+        pageCountInfo.innerHTML = (book.pageCount)
+
+        //add all of this too the dom 
+        newBook.appendChild(titleInfo)
+        newBook.appendChild(authorInfo)
+        newBook.appendChild(pageCountInfo)
+        shelf.appendChild(newBook)
+        bookDisplayCount++;
+       
+ 
+   
+    
 }
-
 bookForm()
