@@ -32,6 +32,7 @@ body {
     flex-direction: column;
     justify-content: space-between;
 }
+
 .sideBarLogo {
     height: 1rem;
     width: 1rem;
@@ -49,6 +50,7 @@ body {
     width: 10%;
     background-color: aqua;
 }
+
 .contentContainer {
     background-color: white;
     display: flex;
@@ -66,30 +68,116 @@ body {
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 6fr;
 
+
+
 }
 
 .contentHeader {
-    background-color: rgb(23, 199, 199);
+    border-radius: 2rem;
+    justify-self: center;
+    height: 50%;
+    width: 90%;
+    background-color: rgb(252, 252, 252);
     grid-column: 1/2;
     grid-row: 2/2;
-    overflow: hidden;
+    z-index: 2;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+
 }
+
 .addButton {
-    height: 2rem;
-    width: 5rem;
-    background-color: rgb(36, 185, 185);
+    margin-left: 0.8rem;
+    margin-right: 0.5rem;
+    padding: 0.5rem;
+    flex: 5% 2 100px;
+    border-style: none;
+
 }
 
 .searchBar {
+    border-style: none;
     height: 90%;
-    width: 10%;
+    flex: 90%;
     background-color: rgb(197, 240, 240);
+    margin-right: 0.5rem;
+    border-radius: 2rem;
+    padding-left: 1rem;
+}
+
+.searchBar::placeholder {
+    font-weight: bolder;
+    font-size: large;
 }
 
 .contentShelf {
-
     background-color: rgb(255, 238, 0);
     grid-column: 1/2;
-    grid-row: 2/4;
-    overflow: hidden;
+    grid-row: 1/4;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ShelfContainer {
+    margin-top: 15rem;
+    width: 90%;
+    height: 67%;
+   
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 2rem;
+}
+
+.bookTest {
+    background-color: rgb(170, 212, 212);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+   
+}
+
+.authorStyle {
+    margin-left: 1rem;
+    grid-column: 1/1;
+    grid-row: 2/2;
+}
+
+.titleStyle{
+    margin-left: 4rem;
+    grid-column: 1/1;
+    grid-row: 1/2;
+}
+
+.pagesCountStyle {
+    margin-left: 1rem;
+    grid-column: 2/2;
+    grid-row: 3/3;
+}
+
+.readStyle {
+    margin-left: 1rem;
+    grid-column: 1/1;
+    grid-row: 3/3;
+}
+
+
+
+
+
+
+
+.formBackground {
+    position: fixed;
+    top: 5rem;
+    left: 40%;
+    right: 50%;
+    bottom: 50%;
+    width: 50vh;
+    height: 70vh;
+    background-color: aqua;
+    z-index: 100;
 }

@@ -18,7 +18,20 @@ const theHobbit = new Book("Hobbit", "JR Tolken", "222", "true", "true");
 
 addBookToLibrary(theHobbit)
 
+function bookForm() {
+    //Basic form container
+    const container = document.querySelector(".container");
+    const Background = document.createElement("div");
+    Background.classList.add("formBackground")
 
+    //Inputs
+
+
+    //adds all of it to main node
+    container.appendChild(Background)
+
+}
+bookForm()
 
 myLibrary.forEach(displayBookShelf)
 
