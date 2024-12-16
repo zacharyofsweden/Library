@@ -101,7 +101,7 @@ body {
 }
 
 .addButton:hover {
-  background-color: antiquewhite;
+    background-color: antiquewhite;
 
 }
 
@@ -135,34 +135,53 @@ body {
     height: 67%;
 
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 15rem));
     grid-template-rows: repeat(3, 1fr);
     gap: 2rem;
 }
 
 .bookTest {
+    height: 15rem;
+    width: 10rem;
     background-color: rgb(170, 212, 212);
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr;
-
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+   
+}
+.titleStyle {
+    justify-self: center;
+    grid-column: 2/2;
+    grid-row: 1/1;
 }
 
 .authorStyle {
-    margin-left: 1rem;
-
+    
+    grid-column: 2/3;
+    grid-row: 3/4;
 }
 
-.titleStyle {
-    margin-left: 4rem;
-    margin-right: 1rem;
-}
+
 
 .pagesCountStyle {
-    margin-left: 1rem;
+    grid-column: 1/2;
+    grid-row: 2/5;
 }
 
-.readStyle {
-    margin-left: 1rem;
-    margin-right: 1rem;
+
+.deleteBookButton {
+   
+    grid-column: 1/1;
+    grid-row: 5/5;
+    height: 2rem;
+    width: 3.4rem;
+    border-radius: 10rem;
+    border-style: none;
+    background-color: antiquewhite;
+    font-weight: 500;
+    
+}
+
+.deleteBookButton:hover {
+    background-color: rgba(250, 235, 215, 0.671);
 }
