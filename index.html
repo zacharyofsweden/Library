@@ -11,11 +11,28 @@
 <body>
     <div class="container">
         <div class="sideBar">
-            <div class="sideBarLogo">
+            <div class="sideBarContent">
+                <div class="sideBarLogo">
+                    <p>Go Read</p>
+                    <img class="LogoIcon" src="img/icons/book-open-blank-variant-outline.svg" alt="">
+                </div>
 
+                <div class="sideBarNav">
+                    <div class="homeNav">
+                        <img class="svgIcon" src="img/icons/home.svg" alt="">
+                        <p>Home</p>
+                    </div>
+                    <div class="shelfNav">
+                        <img class="svgIcon" src="img/icons/book-variant.svg" alt="">
+                        <p>My Shelf</p>
+                    </div>
+
+                </div>
             </div>
-            <div class="sideBarNav"></div>
+
+
             <div class="sideBarProfile"></div>
+
         </div>
         <div class="contentContainer">
             <div class="content">
@@ -25,37 +42,39 @@
                 </div>
                 <div class="contentShelf">
                     <div class="ShelfContainer">
-                        
+
                     </div>
 
                 </div>
             </div>
         </div>
 
-    </div>
 
-    <dialog class="modalForm">
-        <h2>Add your new cool book</h2>
 
-        <form class="bookForm">
+        <dialog class="modalForm">
+            <h2>Add your new cool book</h2>
 
-            <label>
-                Title <input class="formTitle" type="text">
-            </label>
+            <form class="bookForm">
 
-            <label>
-                Author <input class="formAuthor" type="text">
-            </label>
+                <label>
+                    Title <input class="formTitle" type="text">
+                </label>
 
-            <label>
-                Pages Count <input class="formPageCount" type="number">
-            </label>
+                <label>
+                    Author <input class="formAuthor" type="text">
+                </label>
 
-            <input type="submit" class="submitButton">
-        </form>
-        <button class="modalClose">Close</button>
-    </dialog>
-    <script src="myScript.js"></script>
+                <label>
+                    Pages Count <input class="formPageCount" type="number">
+                </label>
+
+                <input type="submit" class="submitButton">
+            </form>
+            <button class="modalClose">Close</button>
+        </dialog>
+
+
+        <script src="myScript.js"></script>
 </body>
 
 </html>
