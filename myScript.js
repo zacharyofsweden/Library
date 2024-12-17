@@ -61,6 +61,7 @@ function addBookToLibrary(book) {
     bookCount++;
     displayBookShelf(myLibrary[myLibrary.length - 1])
     deleteBook()
+    isRead()
 }
 
 
@@ -74,6 +75,22 @@ function deleteBook() {
 
         myLibrary.splice(e.target.dataset.bookId, 1)
         bookListener.parentElement.remove()
+
+    })
+
+
+}
+
+function isRead() {
+    //quarry what book got it's button clicked 
+    //use the data link and remove the book in the array. 
+    //Remove all the dom elements
+    const nodes = document.querySelectorAll(".readBookButton")
+    let bookListener = nodes[nodes.length - 1]
+    bookListener.addEventListener("click", (e) => {
+
+       
+        bookListener.innerHTML = ("read")
 
     })
 
@@ -103,21 +120,30 @@ function displayBookShelf(book) {
     authorInfo.classList.add("authorStyle")
     const pageCountInfo = document.createElement("p")
     pageCountInfo.classList.add("pagesCountStyle")
+
+    //Create new buttons 
     const deleteBookButton = document.createElement("button")
     deleteBookButton.classList.add("deleteBookButton")
+    const readBookButton = document.createElement("button")
+    readBookButton.classList.add("readBookButton")
 
     //displays the book attributes  
+    //Paragraphs
     titleInfo.innerHTML = (book.title)
     authorInfo.innerHTML = (book.author)
     pageCountInfo.innerHTML = (book.pageCount)
+    //Buttons
     deleteBookButton.innerHTML = ("delete")
     deleteBookButton.dataset.bookId = myLibrary.length - 1
+    readBookButton.innerHTML = ("Not read")
+    readBookButton.dataset.bookId = myLibrary.length - 1
 
     //add all of this too the dom 
     newBook.appendChild(titleInfo)
     newBook.appendChild(authorInfo)
     newBook.appendChild(pageCountInfo)
     newBook.appendChild(deleteBookButton)
+    newBook.appendChild(readBookButton)
     shelf.appendChild(newBook)
     bookDisplayCount++;
 
